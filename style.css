@@ -1,5 +1,16 @@
 body {
+  background: lightskyblue;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.diary {
   display: flex;
   justify-content: center;  
   align-items: center; 
+}
+.diary img {
+	width: 300px;
+	height: auto;
 }
