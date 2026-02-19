@@ -1,17 +1,24 @@
 body {
   background: lightblue;
-  height: 100vh;
-  overflow: hidden;
+  margin: 25;
+  font-size: 50px;
+  padding: 5px;
+
 }
 
+p {
+  margin: 0;
+  color: hotpink;
+}
 
 .diary {
-  display: flex;
-  justify-content: center;  
-  align-items: center; 
-  min-height: 100vh;  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .diary img {
-	width: 300px;
-	height: auto;
+  width: 300px;
+  height: auto;
 }
