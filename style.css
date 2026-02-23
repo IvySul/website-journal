@@ -3,7 +3,7 @@ body {
   margin: 25;
   font-size: 50px;
   padding: 5px;
-
+overflow: hidden;
 }
 
 p {
@@ -11,6 +11,9 @@ p {
   color: hotpink;
 }
 
+#toggle {
+  display: none;
+}
 .diary {
   position: absolute;
   top: 50%;
@@ -21,4 +24,53 @@ p {
 .diary img {
   width: 300px;
   height: auto;
+}
+.diaryopen img {
+  width: 510px;
+  height: auto;
+}
+.diaryopen {
+  position: absolute;
+  top: 51%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.diary {
+  opacity: 1;
+}
+
+.diaryopen {
+  opacity: 0;
+}
+
+#toggle:checked ~ .diary-wrapper .diary {
+  opacity: 0;
+}
+
+#toggle:checked ~ .diary-wrapper .diaryopen {
+  opacity: 1;
+}
+
+
+.diary-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  position: relative;
+}
+
+.notepage {
+  position: absolute;
+  width: 600px;
+  bottom: -400px;              
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateY(0);
+}
+
+#toggle:checked ~ .diary-wrapper .notepage {
+  opacity: 1;
+  transform: translateY(-350px);   /* slides upward */
+  transition-delay: 0.6s;          /* waits before sliding */
 }
