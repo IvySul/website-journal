@@ -1,13 +1,14 @@
 body {
-  margin: 25;
-  font-size: 50px;
+  margin: 25px;
   padding: 5px;
+  font-size: 50px;
   overflow: hidden;
+  font-family: "Gloria Hallelujah", "Caveat Brush", cursive;
+
   background:
     radial-gradient(circle at top, rgba(255,220,180,0.6), transparent 60%),
     radial-gradient(circle at bottom, rgba(255,180,200,0.4), transparent 60%),
     linear-gradient(180deg, #fdf2e9 0%, #fbe4d8 100%);
-  font-family: "Gloria Hallelujah", "Caveat Brush", cursive;
 }
 
 p {
@@ -15,12 +16,16 @@ p {
   color: hotpink;
 }
 
-.notepage-link {
-  display: block;
-}
-
 #toggle {
   display: none;
+}
+
+.diary-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 
 .diary {
@@ -28,28 +33,26 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 1;
 }
 
 .diary img {
   width: 300px;
   height: auto;
 }
-.diaryopen img {
-  width: 510px;
-  height: auto;
-}
+
+/* Open diary */
 .diaryopen {
   position: absolute;
   top: 51%;
   left: 45%;
   transform: translate(-50%, -50%);
-}
-.diary {
-  opacity: 1;
+  opacity: 0;
 }
 
-.diaryopen {
-  opacity: 0;
+.diaryopen img {
+  width: 510px;
+  height: auto;
 }
 
 #toggle:checked ~ .diary-wrapper .diary {
@@ -60,26 +63,21 @@ p {
   opacity: 1;
 }
 
-
-.diary-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  position: relative;
+.notepage-link {
+  position: absolute;
+  bottom: -400px;
+  opacity: 0;
+  transform: translateY(0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .notepage {
-  position: absolute;
   width: 600px;
-  bottom: -400px;              
-  opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  transform: translateY(0);
+  display: block;
 }
 
-#toggle:checked ~ .diary-wrapper .notepage {
+#toggle:checked ~ .diary-wrapper .notepage-link {
   opacity: 1;
-  transform: translateY(-350px);   
-  transition-delay: 0.6s;          
+  transform: translateY(-350px);
+  transition-delay: 0.6s;
 }
