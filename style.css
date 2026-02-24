@@ -16,6 +16,10 @@ p {
   color: hotpink;
 }
 
+.notepage-link {
+  display: block;
+}
+
 #toggle {
   display: none;
 }
