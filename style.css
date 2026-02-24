@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   padding: 5px;
-  font-size: 50px;
+  font-size: 40px;
   overflow: hidden;
   font-family: "Gloria Hallelujah", "Caveat Brush", cursive;
 
@@ -12,7 +12,8 @@ body {
 }
 
 p {
-  margin: 10;
+  margin: 8px;
+  padding-left: 10px;
   color: hotpink;
 }
 
